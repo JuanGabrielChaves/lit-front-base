@@ -1,0 +1,23 @@
+{
+    "name": "front-base",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "@brunomon/helpers": "^4.0.0",
+        "@dreamworld/pwa-helpers": "^3.0.1",
+        "@reduxjs/toolkit": "^2.6.1",
+        "lit": "^3.2.1",
+        "redux": "^5.0.1",
+        "redux-logger": "^3.0.6",
+        "redux-thunk": "^3.1.0"
+    },
+    "devDependencies": {
+        "vite": "^6.2.2"
+    }
+}
