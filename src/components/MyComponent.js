@@ -32,17 +32,44 @@ class MyComponent extends connect(store, VALOR, ESTADO, USERS, USERS_STATUS, USE
         }
     `;
 
+    render() {
+        let content;
+
+        if (this.usersStatus === "loading") {
+            content = html`<p>Cargando...</p>`;
+        } else if (this.usersStatus === "succeeded") {
+            content = html`
+                <ul>
+                    ${this.users.map((user) => html`<li>${user.name.first} ${user.name.last}</li>`)}
+                </ul>
+            `;
+        } else if (this.status === "failed") {
+            content = html`<p>${this.error}</p>`;
+        }
+        return html`
+            <div>
+                <h1>Aplicación de prueba usando LitElement y la nueva sintaxis de Redux</h1>
+                <p>Valor: ${this.value}</p>
+                <p>Status: ${this.status}</p>
+
+                <div>
+                    <h2>Lista de Usuarios</h2>
+                    ${content}
+                </div>
+
+                <button @click="${this.increment}">Incrementar</button>
+                <button @click="${this.decrement}">Decrementar</button>
+                <button @click="${this.fetchValue}">Fetch Value</button>
+                <button @click="${this.fetchUsers}">Fetch Users</button>
+            </div>
+        `;
+    }
+
     firstUpdated() {
         if (this.usersStatus === "idle") {
             store.dispatch(fetchUsers());
         }
     }
-
-    static properties = {
-        value: { type: Number },
-        status: { type: String },
-        users: { type: Array },
-    };
 
     stateChanged(state, name) {
         if (name === VALOR) {
@@ -77,38 +104,11 @@ class MyComponent extends connect(store, VALOR, ESTADO, USERS, USERS_STATUS, USE
         store.dispatch(fetchUsers());
     }
 
-    render() {
-        let content;
-
-        if (this.usersStatus === "loading") {
-            content = html`<p>Cargando...</p>`;
-        } else if (this.usersStatus === "succeeded") {
-            content = html`
-                <ul>
-                    ${this.users.map((user) => html`<li>${user.name.first} ${user.name.last}</li>`)}
-                </ul>
-            `;
-        } else if (this.status === "failed") {
-            content = html`<p>${this.error}</p>`;
-        }
-        return html`
-            <div>
-                <h1>Aplicación de prueba usando LitElement y la nueva sintaxis de Redux</h1>
-                <p>Valor: ${this.value}</p>
-                <p>Status: ${this.status}</p>
-
-                <div>
-                    <h2>Lista de Usuarios</h2>
-                    ${content}
-                </div>
-
-                <button @click="${this.increment}">Incrementar</button>
-                <button @click="${this.decrement}">Decrementar</button>
-                <button @click="${this.fetchValue}">Fetch Value</button>
-                <button @click="${this.fetchUsers}">Fetch Users</button>
-            </div>
-        `;
-    }
+    static properties = {
+        value: { type: Number },
+        status: { type: String },
+        users: { type: Array },
+    };
 }
 
 customElements.define("my-component", MyComponent);
