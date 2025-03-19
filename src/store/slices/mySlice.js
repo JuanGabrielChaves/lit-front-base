@@ -33,7 +33,7 @@ const mySlice = createSlice({
                 state.status = "loading";
             })
             .addCase(fetchValue.fulfilled, (state, action) => {
-                state.status = "idle";
+                state.status = "succeeded";
                 state.value = action.payload.value;
             })
             .addCase(fetchValue.rejected, (state) => {
