@@ -1,7 +1,7 @@
 /** @format */
 
 import { LitElement, html, css } from "lit";
-import "./components/MyComponent.js";
+import "./components/NavBarGenerica.js";
 import { store } from "./store/store.js";
 
 class App extends LitElement {
@@ -10,7 +10,7 @@ class App extends LitElement {
     `;
 
     render() {
-        return html` <my-component></my-component> `;
+        return html` <navbar-generica></navbar-generica>`;
     }
 }
 
