@@ -1,0 +1,49 @@
+/** @format */
+
+html {
+    --primario: #3f51b5;
+    --primario10: #7986cb;
+    --primario-10: #303f9f;
+    --on-primario: #ffffff;
+    --on-primario-bajada: rgba(255, 255, 255, 0.6);
+    --secundario: #ffc107;
+    --secundario10: #ffd54f;
+    --secundario-10: #ffa000;
+    --on-secundario: #000000;
+    --on-secundario-bajada: rgba(0, 0, 0, 0.6);
+    --terciario: #009688;
+    --terciario10: #4db6ac;
+    --terciario-10: #00796b;
+    --on-terciario: #ffffff;
+    --on-terciario-bajada: rgba(255, 255, 255, 0.6);
+    --ok: #8bc34a;
+    --error: #f44336;
+    --aplicacion: #fafafa;
+    --on-aplicacion: #212121;
+    --on-aplicacion-disabled: rgba(0, 0, 0, 0.38);
+    --on-aplicacion-separador: rgba(0, 0, 0, 0.12);
+    --on-aplicacion-bajada: rgba(0, 0, 0, 0.6);
+    --formulario: #eeeeee;
+    --on-formulario: #212121;
+    --on-formulario-disabled: rgba(0, 0, 0, 0.38);
+    --on-formulario-separador: rgba(0, 0, 0, 0.12);
+    --on-formulario-bajada: rgba(0, 0, 0, 0.6);
+    --velo: rgba(0, 0, 0, 0.32);
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        --formulario: #2c2c2c;
+        --on-formulario: #ffffff;
+        --on-formulario-disabled: rgba(255, 255, 255, 0.38);
+        --on-formulario-separador: rgba(255, 255, 255, 0.12);
+        --on-formulario-bajada: rgba(255, 255, 255, 0.6);
+        --aplicacion: #121212;
+        --on-aplicacion: #ffffff;
+        --on-aplicacion-disabled: rgba(255, 255, 255, 0.38);
+        --on-aplicacion-separador: rgba(255, 255, 255, 0.12);
+        --on-aplicacion-bajada: rgba(255, 255, 255, 0.6);
+        --error: #cf6679;
+        --primario: #7986cb;
+    }
+}

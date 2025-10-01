@@ -32,12 +32,6 @@ class NavBarGenerica extends connect(store)(LitElement) {
             font-family: "Roboto", sans-serif;
             display: block;
             box-sizing: border-box;
-            /* Variables de Color M3 */
-            --md-sys-color-primary: #6750a4;
-            --md-sys-color-surface: #fffbff;
-            --md-sys-color-on-surface: #1c1b1f;
-            --md-sys-color-on-primary: #ffffff;
-            --md-sys-color-surface-container-low: #f7f2fa;
         }
 
         .navbar-container {
@@ -47,6 +41,8 @@ class NavBarGenerica extends connect(store)(LitElement) {
             display: flex;
             flex-direction: column;
             width: 100%;
+            background-color: var(--primario);
+            color: var(--on-primario);
         }
 
         .navbar-header {
@@ -58,7 +54,6 @@ class NavBarGenerica extends connect(store)(LitElement) {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            width: 100%;
         }
 
         .app-logo {
